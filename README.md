@@ -28,6 +28,20 @@ RAG的实现步骤包括
 3. Classification: Classify text into categories or labels using chat models with structured outputs.结构化输出
 ### langgraph 
 [langgraph文档](https://langchain-ai.github.io/langgraph/agents/agents/)
+入门学习内容
+1. 模拟调用天气tool的agent
+2. 构建chatbot&使用prebuilts构建chatbot
+3. 构建带有webtool的chatbot
+4. 构建带有memory功能的chatbot
+5. 构建带有人类assistance的chatbot
+6. 自定义state
+7. 回退到指定state
+8. 构建一个langgraph server
+9. workflows&agent 概念
+
+项目实战
+复现：[fullstack langgraph quickstart](https://github.com/google-gemini/gemini-fullstack-langgraph-quickstart)
+
 ## Multi-Agents
 ### trae-agent
 [trae-agent仓库](https://github.com/bytedance/trae-agent)
