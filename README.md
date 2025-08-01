@@ -19,7 +19,18 @@ RAG的实现步骤包括
 小于0.84的都被认为是相似度不够，那么对应位置的相邻块要分割，否则合并。
 3. chunk size selector 选择分块大小
 核心思想是，设定一个chunk size候选集[128,256,512]，对不同的chunk size做RAG查询，让LLM评估不同的chunk size下得到的结果，选择能得到最优结果的chunk size作为之后的chunk size。
-4. todo
+4. 上下文增强检索 Contextual Enriched RAG
+检索相关文本块时，不仅返回最相关的块，还包含其相邻的上下文块，提供更完整的信息背景。通过设置context_size参数控制包含的相邻块数量，确保检索到的信息具有更好的连贯性和完整性。
+
+5. 块头部标题 Contextual Chunk Headers RAG  
+为每个文本块使用LLM生成描述性标题，然后同时对文本内容和标题进行向量化。在检索时计算查询与文本内容和标题嵌入的平均相似度，提高检索精确度和语义匹配效果。
+
+6. 文档增强RAG Document Augmentation RAG
+核心创新是为每个文本块生成相关问题。具体步骤：
+● 对每个文本块生成3-5个只能通过该块回答的问题
+● 构建混合向量存储，同时包含原始文本块和生成的问题
+● 检索时既匹配原文也匹配问题，通过问题-文档映射增强召回率
+● 使用SimpleVectorStore实现向量存储和相似度搜索
 ## Agent
 ### langchain
 [LangChain文档](https://python.langchain.com/docs/concepts/)
