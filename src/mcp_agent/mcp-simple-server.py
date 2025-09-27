@@ -16,8 +16,8 @@ def add(a:int,b:int)->int:
 
 
 if __name__ == "__main__":
-    transport = "sse"
-    # transport = "stdio"
+    transport = "stdio"
+    # transport = "sse"
     if transport == "stdio":
         print("running server with stdio transport")
         mcp.run(transport="stdio")

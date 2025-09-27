@@ -1,0 +1,9 @@
+{
+    "servers": {
+        "/Users/daijunjie/code/python/llm_from_scratch/src/mcp_agent/langgraph-mcp.py": {
+            "type": "stdio",
+            "command": "python",
+            "args": []
+        }
+    }
+}

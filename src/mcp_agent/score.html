@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>UC Berkeley - 非官方成绩单 (示例)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+    :root{
+      --ink:#111;
+      --muted:#666;
+      --line:#e5e7eb;
+      --cal:#003262;   /* Berkeley Blue */
+      --gold:#C4820E;  /* Berkeley Gold */
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:#f8fafc;
+      color:var(--ink);
+      font:14px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+    .page{
+      max-width:1000px;
+      margin:24px auto;
+      background:white;
+      border:1px solid var(--line);
+      box-shadow:010px30pxrgba(0,0,0,.06);
+    }
+    header{
+      padding:24px28px;
+      border-bottom:4px solid var(--cal);
+      background:linear-gradient(90deg, rgba(0,50,98,.05), transparent);
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:16px;
+    }
+    .seal{
+      width:54px; height:54px; border-radius:50%;
+      border:2px solid var(--cal);
+      display:grid; place-items:center;
+      font-weight:700; color:var(--cal);
+    }
+    h1{
+      margin:0; font-size:20px; line-height:1.2;
+    }
+    .sub{color:var(--muted); font-size:12px}
+    .tag{
+      border:1px dashed var(--gold); color:var(--gold);
+      padding:6px10px; border-radius:999px; font-weight:600; font-size:12px;
+      text-transform:uppercase; letter-spacing:.06em; background:#fff8e6;
+    }
+    .grid{
+      display:grid; gap:14px; padding:20px28px; grid-template-columns:1.2fr 1fr;
+      border-bottom:1px solid var(--line);
+    }
+    .card{
+      border:1px solid var(--line); border-radius:12px; padding:14px16px;
+      background:#fff;
+    }
+    .cardh3{margin:008px0; font-size:14px; color:var(--cal)}
+    .kv{display:grid; grid-template-columns:160px1fr; gap:8px; font-size:13px}
+    .kvdiv{padding:4px0; border-bottom:1px dashed #f1f5f9}
+    .kvdiv:nth-child(odd){color:var(--muted)}
+    table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      font-size:13px;
+      margin-top:6px;
+    }
+    theadth{
+      text-align:left;
+      padding:10px12px; background:#f9fafb; color:#334155; border-bottom:1px solid var(--line);
+    }
+    tbodytd{
+      padding:10px12px; border-bottom:1px solid #f1f5f9;
+    }
+    tfoottd{
+      padding:12px; background:#fafafa; border-top:2px solid var(--line); font-weight:600;
+    }
+    .totals{
+      display:flex; gap:16px; flex-wrap:wrap; margin:0; padding:0; list-style:none;
+    }
+    .pill{
+      background:#f3f4f6; border:1px solid var(--line); border-radius:999px;
+      padding:8px12px; font-weight:600;
+    }
+    .notice{padding:16px28px; color:var(--muted); font-size:12px}
+    .sign{
+      display:grid; grid-template-columns:1fr 1fr; gap:18px; padding:18px28px28px;
+    }
+    .sig{
+      border-top:1px dashed var(--line); padding-top:10px; font-size:12px; color:var(--muted)
+    }
+    .term-title{
+      margin:0; padding:14px28px8px; color:var(--cal); font-weight:700;
+      border-top:1px solid var(--line); background:linear-gradient(90deg,#f8fbff,transparent);
+    }
+    .gpa-box{
+      padding:10px12px; background:#f9fafb; border:1px solid var(--line); border-radius:10px; display:inline-block
+    }
+    @media print{
+      body{background:white}
+      .page{margin:0; border:none; box-shadow:none}
+      .tag{border-color:#aaa; color:#444; background:#fff}
+      header{background:white}
+      .notice, .sign{page-break-inside:avoid}
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+    <header>
+      <div class="brand">
+        <div class="seal">UC</div>
+        <div>
+          <h1>University of California, Berkeley</h1>
+          <div class="sub">Office of the Registrar • 120 Sproul Hall, Berkeley, CA 94720</div>
+        </div>
+      </div>
+      <div class="tag">Unofficial Transcript (Sample)</div>
+    </header>
+
+    <section class="grid">
+      <div class="card">
+        <h3>学生信息 Student Information</h3>
+        <div class="kv">
+          <div>姓名 Name</div><div>Liwei Chen</div>
+          <div>学号 Student ID</div><div>30345678</div>
+          <div>专业 Program</div><div>B.A. in Computer Science</div>
+          <div>入学学期 Matriculation</div><div>Fall 2024</div>
+          <div>邮箱 Email</div><div>lchen23@berkeley.edu</div>
+          <div>状态 Status</div><div>Good Standing</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>累计信息 Cumulative Summary</h3>
+        <ul class="totals">
+          <li class="pill">累计学分 Attempted: <strong>39.0</strong></li>
+          <li class="pill">合格学分 Earned: <strong>39.0</strong></li>
+          <li class="pill">累计绩点 GPA: <strong>3.67 / 4.00</strong></li>
+        </ul>
+        <div style="margin-top:8px" class="gpa-box">评语 Remarks: Satisfactory Academic Progress</div>
+      </div>
+    </section>
+
+    <h2 class="term-title">Fall 2024</h2>
+    <section class="card" style="margin:12px 28px 18px;">
+      <table aria-label="Fall 2024 courses">
+        <thead>
+          <tr>
+            <th>课程编号 Course</th>
+            <th>课程名称 Title</th>
+            <th>学分 Units</th>
+            <th>成绩 Grade</th>
+            <th>绩点 Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>CS 61A</td><td>Structure and Interpretation of Computer Programs</td><td>4.0</td><td>A</td><td>16.00</td></tr>
+          <tr><td>MATH 54</td><td>Linear Algebra and Differential Equations</td><td>4.0</td><td>A-</td><td>14.80</td></tr>
+          <tr><td>ENGLISH R1A</td><td>Reading & Composition A</td><td>4.0</td><td>B+</td><td>13.20</td></tr>
+          <tr><td>HISTORY 7B</td><td>US History since 1865</td><td>4.0</td><td>A</td><td>16.00</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="5">Term Units: 16.0 • Term GPA: 3.75 • Quality Points: 60.00</td></tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <h2 class="term-title">Spring 2025</h2>
+    <section class="card" style="margin:12px 28px 18px;">
+      <table aria-label="Spring 2025 courses">
+        <thead>
+          <tr>
+            <th>课程编号 Course</th>
+            <th>课程名称 Title</th>
+            <th>学分 Units</th>
+            <th>成绩 Grade</th>
+            <th>绩点 Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>CS 61B</td><td>Data Structures</td><td>4.0</td><td>A-</td><td>14.80</td></tr>
+          <tr><td>MATH 53</td><td>Multivariable Calculus</td><td>4.0</td><td>B+</td><td>13.20</td></tr>
+          <tr><td>STAT 20</td><td>Introduction to Probability and Statistics</td><td>4.0</td><td>A</td><td>16.00</td></tr>
+          <tr><td>PHYSICS 7A</td><td>Physics for Scientists and Engineers</td><td>4.0</td><td>B</td><td>12.00</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="5">Term Units: 16.0 • Term GPA: 3.50 • Quality Points: 56.00</td></tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <h2 class="term-title">Summer 2025</h2>
+    <section class="card" style="margin:12px 28px 18px;">
+      <table aria-label="Summer 2025 courses">
+        <thead>
+          <tr>
+            <th>课程编号 Course</th>
+            <th>课程名称 Title</th>
+            <th>学分 Units</th>
+            <th>成绩 Grade</th>
+            <th>绩点 Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>DATA C100</td><td>Principles & Techniques of Data Science</td><td>4.0</td><td>A</td><td>16.00</td></tr>
+          <tr><td>UGBA 10</td><td>Principles of Business</td><td>3.0</td><td>A-</td><td>11.10</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="5">Term Units: 7.0 • Term GPA: 3.87 • Quality Points: 27.10</td></tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <section class="notice">
+      <strong>说明 Notes：</strong>
+      本示例为练习用途的 <em>非官方</em> 成绩单；所有个人信息均为虚构但格式接近真实院校。GPA 采用 4.00 制；A=4.0、A-=3.7、B+=3.3、B=3.0。
+    </section>
+
+    <section class="sign">
+      <div class="sig">Registrar Signature / Date: __________________________</div>
+      <div class="sig">Advisor Signature / Date: ____________________________</div>
+    </section>
+</div>
+</body>
+</html>
